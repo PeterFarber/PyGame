@@ -1,0 +1,44 @@
+body{
+	margin:0px;
+	padding:0px;
+	background:#EEE;
+}
+
+.container{
+	width:1024px;
+	margin:auto;
+}
+
+.title{
+	font-size:32px;
+	font-weight:bold;
+	text-align: center;
+	margin:20px;
+}
+
+.shrink{
+	margin:0px;
+	padding:0px;
+}
+
+.pythonText{
+	width:100%;
+	height:640px;
+	margin:0px;
+	padding:0px;
+	resize: none;
+}
+
+.pythonButton{
+	width:100%;
+	height:20%;
+	border:0px;
+	padding:12px;
+	background-color:#999;
+}
+
+.pyCanvas{
+	width:640px;
+	height:480px;
+	border:0px;
+}

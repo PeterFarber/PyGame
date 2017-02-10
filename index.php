@@ -10,6 +10,18 @@
 		<link rel="stylesheet" type="text/css" href="src/css/droplet.css">
 	    <style>
 
+	    	.pygame-container{
+	    		position:absolute;
+	    		width:100%;
+	    		height:100%;
+	    		background:#333;
+	    		opacity: 1.0;
+	    		z-index: 500;
+	    		margin:0px;
+	    		padding:0px;
+	    		top:0px;
+	    		left:0px;
+	    	}
 	      #left-panel {
 	        position: absolute;
 	        top: 0; bottom: 0; width: 100%; left: 0;
@@ -71,6 +83,35 @@
 	      .droplet-wrapper-div{
 	      	left: 520px !important;
 	      }
+
+	      .pyCanvas{
+	      	width:656px;
+	      	margin:auto;
+	      	height:496px;
+	      	margin-top:200px;
+	      	opacity:1;
+	      	background:#222;
+	      	border:1px solid black;
+	      }
+	      .pygame-close{
+	      	position:absolute;
+	      	top:0px;
+	      	right:0px;
+	      	width:64px;
+	      	height:64px;
+	      	padding:12px;
+	      	font-size:38px;
+	      	color:#FFF;
+	      	cursor:pointer;
+	      	font-weight:bold;
+	      }
+	      .loading{
+	     	text-align: center;
+	     	position:relative;
+	     	line-height: 480px;
+	     	font-size:32px;
+	     	color:#FFF;
+	      }
 	    </style>
 	</head>
 
@@ -90,28 +131,24 @@
 			</div>
 		</div>
 
-		<div id="compile">
-		</div>
-
 		<script src="src/js/coffee-script.js"></script>
 	    <script src="src/js/vendor/ace/ace.js"></script>
 	    <script src="src/js/droplet-full.js"></script>
     	<script src="palette.coffee" type="text/coffeescript"></script>
-		<!--
-		<div class="container">
-			<div class="title">Pencilcode.py</div>
-			<form class="shrink" id="searchForm">
-				<textarea name="pythonField" id="pythonField" class="pythonText"></textarea>
+    	
+		<div class="pygame-container" style="display:none;">
+			<div class="pygame-close">X</div>
+			<form style="" id="searchForm">
+				<textarea style="display:none;" name="pythonField" id="pythonField" class="pythonText"></textarea>
 			</form>
 
-			<button id="btn" class="pythonButton">Compile</button>
-
-			<div id="result"></div>
-			<iframe src="output/serpentduel.html" class="pyCanvas">
-
-			</iframe>
+			<div class="pyCanvas">
+				<div class="loading" style="display:none;">Compiling...</div>
+				<iframe id="pygame" src="" style="border: 0px solid black; width:100%; height:100%;">
+				</iframe>
+			</div>
 		</div>
-		-->
+		
 	</body>
 
 </html>

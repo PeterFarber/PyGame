@@ -1,6 +1,10 @@
 $(document).ready(function(){
-	$("#btn").click(function(){
-		var code = $("#pythonField").val();
+	$("#play").click(function(){
+		$('#pythonField').text(editor.getValue())
+		$(".pygame-container").show("slow");
+		$(".loading").show();
+
+
 		//$("#pythonField").val("Compiling...");
 		var vpythonField = $("#pythonField").val();
 		if(vpythonField=='')
@@ -13,10 +17,14 @@ $(document).ready(function(){
 				pythonField: vpythonField,
 			},
 			function(response,status){ // Required Callback Function
-				$("#result").text(response);//"response" receives - whatever written in echo of above PHP script.
+				$(".loading").hide();
+				$("#pygame").attr('src', response);
 				$("#pythonField").val(code);
 			});
 
 		}
+	});
+	$(".pygame-close").click(function(){
+		$(".pygame-container").hide("slow");
 	});
 });

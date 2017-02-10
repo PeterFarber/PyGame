@@ -128,6 +128,21 @@ unless window.ALREADY_LOADED
       },
 
       {
+        name: 'PyGame',
+        color: 'amber',
+        blocks: [
+          { block: 'Initialize',
+            expansion: 'screen '},
+          { block: 'import pyjsdl as pygame' },
+          { block: 'pygame.init()' },
+          { block: 'screen = pygame.display.set_mode([640,480])' },
+          { block: 'screen.fill(WHITE)' },
+          { block: 'pygame.draw.line(screen, (0,0,0), [0,0], [3,5], 5)' }
+
+        ]
+      },
+
+      {
         name: 'Misc',
         color: 'lightblue',
         blocks: [
@@ -171,7 +186,6 @@ unless window.ALREADY_LOADED
   $('#toggle').on 'click', ->
     editor.toggleBlocks()
     localStorage.setItem 'blocks', (if editor.currentlyUsingBlocks then 'yes' else 'no')
-    $('#compile').html(editor.getValue())
 
   # Stuff for testing convenience
   $('#update').on 'click', ->

@@ -65783,7 +65783,7 @@ exports.createTreewalkParser = function(parse, config, root) {
       if ((this.opts.categories != null) && color in this.opts.categories) {
         return this.opts.categories[color];
       //} else if (color in config.COLOR_DEFAULTS) {
-      //  return config.COLOR_DEFAULTS[color];
+      //    return config.COLOR_DEFAULTS[color];
       } else {
         return color;
       }

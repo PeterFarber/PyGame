@@ -2,7 +2,9 @@ $(document).ready(function(){
 	$("#play").click(function(){
 		$('#pythonField').text(editor.getValue())
 		$(".pygame-container").show("slow");
-		$(".loading").show();
+		$("#pygame").hide("slow");
+		$("#pygame").attr('src', '');
+		$(".loading").show("slow");
 
 
 		//$("#pythonField").val("Compiling...");
@@ -17,8 +19,9 @@ $(document).ready(function(){
 				pythonField: vpythonField,
 			},
 			function(response,status){ // Required Callback Function
-				$(".loading").hide();
+				$(".loading").hide("slow");
 				$("#pygame").attr('src', response);
+				$("#pygame").show("slow");
 				$("#pythonField").val(code);
 			});
 

@@ -11,8 +11,10 @@
         $file = $user . ".py"; //Get file directory location.
         $builddir =  $user . "/"; //Get build path location.
 
+        rmdir('127001');
+        
         //Compile using pyjsbuild with the $file and the output directory $builddir.
-        $stri = "c:/Python27/Scripts/pyjsbuild -S ". $file ." -o " . $builddir;
+        //$stri = "c:/Python27/Scripts/pyjsbuild -S ". $file ." -o " . $builddir;
 
         //This will execute the command with cmd.
         $command = escapeshellcmd($stri);

@@ -3,7 +3,7 @@ unless window.ALREADY_LOADED
   window.ALREADY_LOADED = true
   dropletConfig = ace.edit 'droplet-config'
   dropletConfig.setTheme 'ace/theme/terminal'
-  dropletConfig.getSession().setMode 'ace/mode/javascript'
+  dropletConfig.getSession().setMode 'ace/mode/python'
 
   dropletConfig.setValue localStorage.getItem('config') ? '''
     ({
@@ -131,14 +131,13 @@ unless window.ALREADY_LOADED
         name: 'PyGame',
         color: 'amber',
         blocks: [
-          { block: 'Initialize',
-            expansion: 'screen '},
           { block: 'import pyjsdl as pygame' },
           { block: 'pygame.init()' },
           { block: 'screen = pygame.display.set_mode([640,480])' },
           { block: 'screen.fill(WHITE)' },
-          { block: 'pygame.draw.line(screen, (0,0,0), [0,0], [3,5], 5)' }
-
+          { block: 'pygame.draw.rect(screen, (255,255,0), [150, 10, 50, 20])' },
+          { block: 'pygame.display.flip()' },
+          { block: 'pygame.quit()' }
         ]
       },
 

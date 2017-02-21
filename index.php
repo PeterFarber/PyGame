@@ -49,6 +49,12 @@
 	        text-align: center;
 	        background-color:#90caf9;
 	        color:#FFF;
+	        box-sizing: border-box;
+		    -moz-box-sizing: border-box;
+		    -webkit-box-sizing: border-box;
+		    border-right:1px solid black;
+		    border-bottom:1px solid black;
+
 	      }
 	      #play {
 	      	display: inline-block;
@@ -62,6 +68,11 @@
 	        border-left:0px solid black;
 	        color:#FFF;
 	        background-color:#a5d6a7;
+	        box-sizing: border-box;
+   			-moz-box-sizing: border-box;
+   			-webkit-box-sizing: border-box;
+		    border-bottom:1px solid black;
+
 	      }
 	      #close {
 	        position: absolute;
@@ -83,7 +94,6 @@
 	      .droplet-wrapper-div{
 	      	left: 520px !important;
 	      }
-
 	      .pyCanvas{
 	      	width:656px;
 	      	margin:auto;
@@ -131,7 +141,7 @@
 			</div>
 		</div>
 
-		<script src="src/js/coffee-script.js"></script>
+		<script src="src/js/python-script.js"></script>
 	    <script src="src/js/vendor/ace/ace.js"></script>
 	    <script src="src/js/droplet-full.js"></script>
     	<script src="palette.coffee" type="text/coffeescript"></script>

@@ -6,8 +6,6 @@ $(document).ready(function(){
 		$("#pygame").attr('src', '');
 		$(".loading").show("slow");
 
-
-		//$("#pythonField").val("Compiling...");
 		var vpythonField = $("#pythonField").val();
 		if(vpythonField=='')
 		{
@@ -29,5 +27,7 @@ $(document).ready(function(){
 	});
 	$(".pygame-close").click(function(){
 		$(".pygame-container").hide("slow");
+		$("#pygame").attr('src', '');
+		
 	});
 });

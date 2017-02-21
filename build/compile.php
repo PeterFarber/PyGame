@@ -1,4 +1,26 @@
 <?php
+    
+
+    //Delete a file directory copied this script from online.
+    //The normal rmdir function said I didnt have permission to delete a dir.
+    //This function does some magic to allow it I guess.
+    function rrmdir($src) {
+        $dir = opendir($src);
+        while(false !== ( $file = readdir($dir)) ) {
+            if (( $file != '.' ) && ( $file != '..' )) {
+                $full = $src . '/' . $file;
+                if ( is_dir($full) ) {
+                    rrmdir($full);
+                }
+                else {
+                    unlink($full);
+                }
+            }
+        }
+        closedir($dir);
+        rmdir($src);
+    }
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
         $content = $_POST["pythonField"];
@@ -11,10 +33,13 @@
         $file = $user . ".py"; //Get file directory location.
         $builddir =  $user . "/"; //Get build path location.
 
-        rmdir('127001');
-        
+        //Remove the directory for the user if it exists.
+        rrmdir($user);
+        mkdir($user);
+
+
         //Compile using pyjsbuild with the $file and the output directory $builddir.
-        //$stri = "c:/Python27/Scripts/pyjsbuild -S ". $file ." -o " . $builddir;
+        $stri = "c:/Python27/Scripts/pyjsbuild -S ". $file ." -o " . $builddir;
 
         //This will execute the command with cmd.
         $command = escapeshellcmd($stri);
